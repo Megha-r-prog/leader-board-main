@@ -8,13 +8,18 @@ body{
 }
 main{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 .container{
     background-color: white;
+    /* height select kori ni keno? */
     width: 870px;
-    height: 679px;
-    padding: 30px;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-top: 21px;
+    border-radius: 5px;
 }
 hr{
     border: 1px solid #D1D1D1;
@@ -80,7 +85,63 @@ hr{
     grid-template-columns: repeat(2,1fr);
     grid-row-gap:26px ;
     grid-column-gap: 46px;
-    /* flex-wrap: wrap; */
-    /* margin-bottom: 46px; */
-    /* margin-right: 26px; */
+
 }
+/* latest courses */
+.courses{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-column-gap: 24px;
+}
+.course{
+    width: 253px;
+    height: 279px;
+    box-shadow: ;
+}
+.coursebanner img{
+    width: 224px;
+    height: 104px;
+}
+.ratingnduration{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.fa-star{
+    width: 12px;
+}
+.fa-star.filled{
+    color: #FFC014;
+}
+.fa-star.empty{
+    color: #AEAEAE;
+    opacity: 0.25;
+}
+/* media query */
+
+/* for mobile */
+@media only screen and (max-width:688px) {
+    .container{
+        width: 100%;
+    }
+    .blogs, .courses{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .player{
+        flex-direction: column;
+    }
+}
+
+    /* for ipad */
+    @media only screen and (min-width:688px) and (max-width:992px)
+    {
+        .container{
+            width: 100%;
+        }
+        .blogs, .courses{
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .player{
+            flex-direction: column;
+        }
+    }
